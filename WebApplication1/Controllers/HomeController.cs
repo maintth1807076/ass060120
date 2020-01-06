@@ -11,19 +11,25 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private MyDbContext db = new MyDbContext();
-        public ActionResult Index(int? marketId, string keyWord)
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult ShowCoin(int? marketId, string keyWord)
         {
             var coins = db.Coins.Where(c => c.Status == 0);
-            if (marketId != null)
+            if (marketId != null && marketId != 0)
             {
+                ViewBag.CurrentMarketId = marketId;
                 coins = coins.Where(c => c.MarketId == marketId);
             }
             if (keyWord != null)
             {
-                coins = coins.Where(c => c.Id.Contains(keyWord) || c.Name.Contains(keyWord)); 
+                ViewBag.CurrentKeyWord = keyWord;
+                coins = coins.Where(c => c.Name.Contains(keyWord)); 
             }
-            
-            ViewBag.MarketId = new SelectList(db.Markets, "Id", "Name");
+            ViewBag.Markets = db.Markets;
             return View(coins.ToList());
         }
     }

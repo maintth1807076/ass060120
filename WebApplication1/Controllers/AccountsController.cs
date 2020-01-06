@@ -55,7 +55,7 @@ namespace WebApplication1.Controllers
                 var authenticationManager = HttpContext.GetOwinContext().Authentication;
                 var userIdentity = UserManager.CreateIdentity(account, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
-                return Redirect("/Home");
+                return Redirect("/Home/ShowCoin");
             }
             return View("Register");
         }
@@ -73,7 +73,7 @@ namespace WebApplication1.Controllers
                 var authenticationManager = System.Web.HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = UserManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
-                return Redirect("/Home");
+                return Redirect("/Home/ShowCoin");
             }
             return View("Login");
         }

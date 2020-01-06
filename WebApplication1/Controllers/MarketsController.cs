@@ -10,6 +10,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class MarketsController : Controller
     {
         private MyDbContext db = new MyDbContext();
@@ -33,6 +34,12 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Description,CreateAt,UpdatedAt,Status")] Market market)
         {
+            var market1 = db.Markets.FirstOrDefault(m => m.Name == market.Name);
+            if (market1 != null)
+            {
+                ModelState.AddModelError("Name", "Name exist. Please other name.");
+                return View(market);
+            }
             market.CreateAt = DateTime.Now;
             market.UpdatedAt = DateTime.Now;
             if (ModelState.IsValid)

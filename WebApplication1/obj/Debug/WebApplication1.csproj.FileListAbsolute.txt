@@ -101,3 +101,4 @@ F:\baitapc#\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.Cookies.
 F:\baitapc#\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.OAuth.xml
 F:\baitapc#\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.ChangeDatabase1.resources
 F:\baitapc#\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.SeedUser.resources
+F:\baitapc#\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.ChangeCoin.resources

@@ -19,7 +19,10 @@ namespace WebApplication1.Models
         public MyDbContext() : base("name=MyDbContext")
         {
         }
-
+        public static MyDbContext Create()
+        {
+            return new MyDbContext();
+        }
         public System.Data.Entity.DbSet<WebApplication1.Models.Market> Markets { get; set; }
 
         public System.Data.Entity.DbSet<WebApplication1.Models.Coin> Coins { get; set; }

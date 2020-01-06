@@ -186,6 +186,10 @@
     <Compile Include="Migrations\202001061543490_SeedUser.Designer.cs">
       <DependentUpon>202001061543490_SeedUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001061651163_ChangeCoin.cs" />
+    <Compile Include="Migrations\202001061651163_ChangeCoin.Designer.cs">
+      <DependentUpon>202001061651163_ChangeCoin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -227,13 +231,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Markets\Create.cshtml" />
     <Content Include="Views\Markets\Index.cshtml" />
     <Content Include="Views\Coins\Create.cshtml" />
     <Content Include="Views\Coins\Index.cshtml" />
     <Content Include="Views\Accounts\Register.cshtml" />
     <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\ShowCoin.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001061543490_SeedUser.resx">
       <DependentUpon>202001061543490_SeedUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001061651163_ChangeCoin.resx">
+      <DependentUpon>202001061651163_ChangeCoin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
